@@ -7,10 +7,28 @@
 </head>
 <body>
     <script>
-        function allNumbersDivisibleBy(arr , num){
-            return arr.every((value) => value % num === 0)}
-        let arr = [2,4,6,8,10];
-        console.log(allNumbersDivisibleBy(arr , 2));
+        let Books = [
+            {
+                id : 1,
+                name : 'Ya',
+            },
+            {
+                id : 2,
+                name : 'Ya Ya',
+            },
+            {
+                id : 3,
+                name : 'Ya Ya Ya',
+            },
+        ]
+        let check = Books.find((item , index , arr) =>{
+            return item.id === 1;
+        })
+        if(check){
+            console.log(check.name);
+        }else{
+            console.log("There's no book with id = 1");
+        }
     </script>
 </body>
 </html>

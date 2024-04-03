@@ -7,13 +7,24 @@
 </head>
 <body>
     <script>
-        function hasNegativeNumber(arr){
-            return arr.every((value) =>{
-                return value > 0;
-            })
-        }
-        let arr = [1,2,3,4,5];
-        console.log(hasNegativeNumber(arr));
+        let Students = [
+            {
+                id : 1,
+                name : "Anh",
+            },
+            {
+                id : 2,
+                name : "Quang",
+            },
+            {
+                id : 3,
+                name : "Quang Anh",
+            },
+        ]
+        Students.forEach((item , index , arr) =>{
+            return arr[index] = item.name;
+        })
+        console.log(Students);
     </script>
 </body>
 </html>

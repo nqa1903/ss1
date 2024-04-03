@@ -7,36 +7,23 @@
 </head>
 <body>
     <script>
-        let users = [
-        {
-    name: "Nguyễn Văn A",
-    address: "Hà Nội",
-    email: "nva@rikkei.com",
-  },
-  {
-    name: "Trần Văn Bình",
-    address: "Hà Nội",
-    email: "tvbinh@rikkei.com",
-  },
-  {
-    name: "Nguyễn Hồng Anh",
-    address: "Thái Bình",
-    email: "nhanh@gmail.com",
-  },
-  {
-    name: "Lê Văn Nam",
-    address: "Hà Nội",
-    email: "lvnam@gmail.com",
-  },
-
-        ];
-        function filterByAddressAndEmail(users, address, emailAdress) {
-            let filtered = users.filter(user => {
-            return user.address === address && user.email.endsWith(emailAdress);
+        function filterAndModifyArray(array1, array2) {
+            let filteredValues = array1.filter(value => !array2.includes(value));
+            let duplicateValues = array1.filter(value => array2.includes(value));
+            duplicateValues.forEach(value => {
+            let index = array1.indexOf(value);
+            while (index !== -1) {
+                array1.splice(index, 1);
+                index = array1.indexOf(value);
+            }
             });
-            return filtered;
+            return filteredValues;
         }
-        console.log(filterByAddressAndEmail(users, 'Hà Nội' , '@rikkei.com'));
+        let array1 = [1, 2, '1', 3, 'a'];
+        let array2 = [1, 2, 3, 4];
+        let filteredValues = filterAndModifyArray(array1, array2);
+        console.log(filteredValues);
+
     </script>
 </body>
 </html>

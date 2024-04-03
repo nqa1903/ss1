@@ -7,18 +7,19 @@
 </head>
 <body>
     <script>
-        function sum(arr){
-            // let sum = 0;
-            // for(let i = 0 ; i < arr.length ; i++){
-            //     sum += arr[i];
-            // }
-            // return sum;
-            return arr.reduce((acc , value , arr) => {
-                return acc + value;
-            }, 0)
-        }
-        let arr = [1,2,3,4,5];
-        console.log(sum(arr));
+        let employees = [
+            { id: 1, name: 'Alice', age: 25, department: 'IT' }, 
+            { id: 2, name: 'Bob', age: 20, department: 'IT' }, 
+            { id: 3, name: 'Charlie', age: 25, department: 'Marketing' }, 
+            { id: 4, name: 'David', age: 35, department: 'IT' }, 
+            { id: 5, name: 'Eve', age: 22, department: 'HR' },
+        ];
+        let check = employees.filter((item , index , arr) =>{
+            if(item.age < 25){
+                return item;
+            }
+        })
+        console.log(check);
     </script>
 </body>
 </html>
