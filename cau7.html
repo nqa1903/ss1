@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function findLargestNumLessThanOrEqualTo(arr, num) {
+            let nums = arr.filter((item) =>{
+                if (item <= num){
+                    return item;
+                }
+            });
+            nums.sort((a, b) => b - a);
+            return nums[0];
+        }
+        let arr = [1, 5, 7, 10, 3, 6];
+        let input = +prompt("Enter a number : ");
+        let check = findLargestNumLessThanOrEqualTo(arr, input);
+        console.log(check);
+    </script>
+</body>
+</html>

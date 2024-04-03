@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function insertArray(array1, array2, position) {
+            let index = 0;
+            let result = [];
+            array1.forEach((element, i) => {
+                if (i === position) {
+                    array2.forEach((item) => {
+                        result.push(item);
+                    });
+                    index += array2.length;
+                }
+                result.push(element);
+            });
+            return result;
+        }
+        let array1 = [1, 2, 3, 4, 5];
+        let array2 = [6, 7, 8];
+        let position = 2; 
+        let result = insertArray(array1, array2, position);
+        console.log(result);
+    </script>
+</body>
+</html>

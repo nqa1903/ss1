@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let Array = [1,2,'0',true,-1,-3];
+        let check = Array.filter((item , index , arr) => {
+            if(typeof item === 'number'  && Number.isInteger(item) && item > 0){
+                return item;
+            }
+        })
+        console.log(check);
+    </script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function filterAndModifyArray(array1, array2) {
+            let filteredValues = array1.filter(value => !array2.includes(value));
+            let duplicateValues = array1.filter(value => array2.includes(value));
+            duplicateValues.forEach(value => {
+            let index = array1.indexOf(value);
+            while (index !== -1) {
+                array1.splice(index, 1);
+                index = array1.indexOf(value);
+            }
+            });
+            return filteredValues;
+        }
+        let array1 = [1, 2, '1', 3, 'a'];
+        let array2 = [1, 2, 3, 4];
+        let filteredValues = filterAndModifyArray(array1, array2);
+        console.log(filteredValues);
+
+    </script>
+</body>
+</html>

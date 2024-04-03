@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let Books = [
+            {
+                id : 1,
+                name : 'Ya',
+            },
+            {
+                id : 2,
+                name : 'Ya Ya',
+            },
+            {
+                id : 3,
+                name : 'Ya Ya Ya',
+            },
+        ]
+        let check = Books.find((item , index , arr) =>{
+            return item.id === 1;
+        })
+        if(check){
+            console.log(check.name);
+        }else{
+            console.log("There's no book with id = 1");
+        }
+    </script>
+</body>
+</html>

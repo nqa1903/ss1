@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let users = [
+            {
+                name: "Anh",
+                pass: "123",
+            },
+            {
+                name: "Quang",
+                pass: "1 2 3",
+            },
+            {
+                name: "Quang Anh",
+                pass: "123 4",
+            },
+        ];
+
+        function checkWhitespace(str) {
+            return /\s/.test(str);
+        }
+
+        let usersWithWhitespace = [];
+        users.forEach((item, index, arr) => {
+            let hasWhitespace = checkWhitespace(item.pass);
+            if (hasWhitespace) {
+                usersWithWhitespace.push(item);
+            }
+        });
+
+        if (usersWithWhitespace.length > 0) {
+            console.log(usersWithWhitespace);
+        } else {
+            console.log("All the account's passwords are valid");
+        }
+
+    </script>
+</body>
+</html>
