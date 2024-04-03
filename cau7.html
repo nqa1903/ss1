@@ -7,19 +7,24 @@
 </head>
 <body>
     <script>
-        function findLargestNumLessThanOrEqualTo(arr, num) {
-            let nums = arr.filter((item) =>{
-                if (item <= num){
-                    return item;
+        function hasPrimeNumber(arr){
+            return arr.some((value) => {
+                let flag = true;
+                if(value < 2){
+                    flag = false;
+                }else{
+                    for(let i = 2 ; i < value - 1 ; i++){
+                        if(value % i === 0){
+                            flag = false;
+                            break;
+                        }
+                    }
                 }
-            });
-            nums.sort((a, b) => b - a);
-            return nums[0];
+                return flag;
+            })
         }
-        let arr = [1, 5, 7, 10, 3, 6];
-        let input = +prompt("Enter a number : ");
-        let check = findLargestNumLessThanOrEqualTo(arr, input);
-        console.log(check);
+        let arr = [4,6,8,9,10];
+        console.log(hasPrimeNumber(arr));
     </script>
 </body>
 </html>

@@ -7,30 +7,12 @@
 </head>
 <body>
     <script>
-        let Class = [
-            {
-                id : 1,
-                number : 25,
-            },
-            {
-                id : 1,
-                number : 30,
-            },
-            {
-                id : 1,
-                number : 50,
-            },
-        ]
-        let result = Class.map((item , index , arr) =>{
-            if(item.number < 30){
-                item.number += 10;
-            }
-            if(item.number > 40){
-                item.number -= 10;
-            }
-            return item;
-        })
-        console.log(result);
+        function hasUppercase(str){
+            return [...str].some((value) =>
+                /[A-Z]/.test(value));
+        }
+        let str = 'Hello';
+        console.log(hasUppercase(str));
     </script>
 </body>
 </html>
